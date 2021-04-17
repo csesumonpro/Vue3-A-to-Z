@@ -10,9 +10,23 @@
         
     <div id="app">
         <!-- {{title}} inside <br> -->
+        <div v-if="print">
+
         {{textInput}}
+        </div>
+        <div v-else-if="print === '1'">  
+            nothing
+        </div>
+
         <input type="text" v-model="textInput">
         <button @click="submitForm">Submit </button>
+
+        <!-- Loop Rendering  -->
+            <ul>
+                <li v-for="item in list">
+                    {{item}}
+                </li>
+            </ul>
     </div>
 
     <script src="vue.js"></script>

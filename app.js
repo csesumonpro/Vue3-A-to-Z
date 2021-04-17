@@ -3,15 +3,13 @@ const counter = {
         return {
             title: "This is a brand new vue 3 course",
             list: ['apple', 'orange', 'mango'],
-            textInput: ''
+            textInput: '',
+            print: false
         }
     },
     methods: {
       submitForm() {
-        this.textInput = this.textInput
-        .split('')
-        .reverse()
-        .join('')
+       this.print = true
       }
     },
   }
