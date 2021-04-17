@@ -7,9 +7,12 @@
     <title>Vue3 A to Z</title>
 </head>
 <body>
-        {{title}} outside
+        
     <div id="app">
-        {{title}} inside
+        <!-- {{title}} inside <br> -->
+        {{textInput}}
+        <input type="text" v-model="textInput">
+        <button @click="submitForm">Submit </button>
     </div>
 
     <script src="vue.js"></script>
