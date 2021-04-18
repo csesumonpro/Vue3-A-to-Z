@@ -4,12 +4,16 @@ const counter = {
             title: "This is a brand new vue 3 course",
             list: ['apple', 'orange', 'mango'],
             textInput: '',
-            print: false
+            print: false,
+            rawHtml: "<h2 style='color:red'>this is title</h2>"
         }
     },
     methods: {
       submitForm() {
        this.print = true
+      },
+      modifiedInputvalue() {
+        console.log(this.textInput)
       }
     },
   }

@@ -18,7 +18,7 @@
             nothing
         </div>
 
-        <input type="text" v-model="textInput">
+        <input type="text" @keyup="modifiedInputvalue" v-model="textInput">
         <button @click="submitForm">Submit </button>
 
         <!-- Loop Rendering  -->
