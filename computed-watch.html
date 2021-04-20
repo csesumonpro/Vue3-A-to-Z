@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Computed and watch</title>
+</head>
+<body>
+    
+    <div id="computed-watch"> 
+
+        <input type="text"  v-model="author.name">
+        <button @click="updateValue">Submit</button>
+        <span>{{bookLength}}</span>
+        <span>{{bookLength}}</span>
+        <span>{{bookLength}}</span>
+        <div>
+            {{bookLengthFromMethods()}}
+        </div>
+        <div>
+            {{bookLengthFromMethods()}}
+        </div>
+        <div>
+            {{bookLengthFromMethods()}}
+        </div>
+
+        <!-- <div>
+            {{fullName}}
+        </div> -->
+        {{lastName}}
+
+    </div>
+    
+    <script src="vue.js"></script>
+    <script>
+        const watchAndComputed = {
+            data() {
+                return {
+                    author: {
+                        name: 'sumon',
+                        books: [
+                        'Vue 2 - Advanced Guide',
+                        'Vue 3 - Basic Guide',
+                        'Vue 4 - The Mystery'
+                        ]
+                    },
+                    firstName: 'Jon',
+                    lastName: 'Does'
+                }
+            },
+            computed: {
+                bookLength() {
+                    // console.log('form computed')
+                    return this.author.books.length > 0 ? 'Yes' : 'No';
+                },
+                fullName: {
+                    get() {
+                        return this.firstName+ "" + this.lastName;
+                    },
+                    set(newValue) {
+                        this.firstName = newValue
+                    }
+                }
+            },
+            methods: {
+                updateValue() {
+                    this.fullName = "abc";
+                },
+                bookLengthFromMethods() {
+                    // console.log('form methods')
+                    return this.author.books.length > 0 ? 'Yes' : 'No';
+                }   
+            },
+            watch: {
+                author: {
+                    handler(newValue, oldValue) {
+                        this.lastName = newValue.name
+                    },
+                    deep: true
+                }
+            }
+        };
+        const app = Vue.createApp(watchAndComputed);
+        app.mount('#computed-watch');
+    </script>
+</body>
+</html>
