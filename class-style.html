@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Class and Style Binding</title>
+</head>
+<body>
+    
+    <div id="class-style"> 
+        {{title}}
+       
+        <h2 :style="`color:${redColor}`">This is a title tag</h2>
+        <div :style="{ color: redColor, fontSize: fontSize + 'px' }">
+            Inline Style COntent
+        </div>
+
+        <div class="lorem-ipsum" :class="{active: isActive }">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium illum, provident, nisi ipsam expedita repellat omnis, deserunt blanditiis voluptatibus nam nulla aperiam ex. Reprehenderit laudantium autem, cum sapiente voluptas fuga!
+        </div>
+        <div :class="[activeClass, errorClass]">
+                Active and error class binding
+        </div>
+        <div :style="styleObject">
+            StyleObject 
+        </div>
+
+        <div :style="logic ? 'color:red' : 'color:green' ">
+                Logically Style
+        </div>
+    </div>
+    
+    <script src="vue.js"></script>
+    <script>
+        const watchAndComputed = {
+            data() {
+                return {
+                    logic: true,
+                    title: "vue3 class and style binding",
+                    redColor: 'red',
+                    isActive: false,
+                    activeClass: 'our-active-style',
+                    errorClass: 'our-error-style',
+                    fontSize: 20,
+                    styleObject: {
+                        color: 'red',
+                        fontSize: '13px',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+        };
+        const app = Vue.createApp(watchAndComputed);
+        app.mount('#class-style');
+    </script>
+    <style>
+        .lorem-ipsum {
+            color:red
+        }
+        .our-active-style {
+            color: green
+        }
+    </style>
+</body>
+</html>
