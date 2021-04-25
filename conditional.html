@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Rendering</title>
+</head>
+<body>
+    <div id="conditional" style="margin: 0 auto; width: 1000px">
+        <h2>Conditional Rendering</h2>
+        <h1 v-if="awesome">Vue is awesome!</h1>
+        <h1 v-else>Oh no 😢</h1>
+
+        <div v-if="ok">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </div>
+        <div v-if="type == 'A'">
+            A
+          </div>
+          <div v-else-if="type == 'B'">
+            B
+          </div>
+          <div v-else-if="type == 'C'">
+            C
+          </div>
+          <div v-else>
+            Not A/B/C
+          </div>
+          <div v-if="matchedDataType == '1' ">
+                One
+          </div>
+          <div v-else>
+            Not One
+          </div>
+
+          <div v-show="false">
+                This is title
+          </div>
+          <ul>
+        <div v-for="user in users" :key="user.id">
+            <li v-if="user.isActive">
+            {{ user.name }}
+            </li>
+        </div>     
+    </ul>
+
+    </div>
+
+    <script src="vue.js"></script>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    matchedDataType: 1,
+                    type: "A",
+                    ok: false,
+                    awesome: true,
+                    users: [
+                        {
+                            name: 'sumon',
+                            isActive: true
+                        },
+                        {
+                            name: 'shamim',
+                            isActive: false
+                        }
+                    ]
+                }
+            }
+        }).mount("#conditional");
+    </script>
+    
+</body>
+</html>
