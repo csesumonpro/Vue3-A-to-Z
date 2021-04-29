@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Rendering</title>
+</head>
+<body>
+    <div id="list-rendering" style="margin: 0 auto; width: 1000px">
+       List Rendering 
+       <ul id="array-rendering">
+        <li v-for="item in myObject">
+          {{item}}
+        </li>
+      </ul>
+      <li v-for="i in 10">
+            {{i}}
+      </li>
+    </div>
+
+    <script src="vue.js"></script>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    items: [
+                        { message: 'Foo' }, 
+                        { message: 'Bar' }
+                    ],
+                    myObject: {
+                        title: 'How to do lists in Vue',
+                        author: 'Jane Doe',
+                        publishedAt: '2016-04-10',
+                        abc: "sdhfs"
+                    }
+                }
+            }
+        }).mount("#list-rendering");
+    </script>
+    
+</body>
+</html>
