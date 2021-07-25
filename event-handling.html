@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Event Handling</title>
+
+</head>
+
+<body>
+    <div id="event-handling">
+       <h3>Vue3 Event Handling</h3>
+
+       <button @click="test('Sumon', 'multiple data', $event)">Add 1</button>
+       <input @keyup.alt.enter="clear" />
+
+        <p>The button above has been clicked {{ counter }} times.</p>
+        <a  @click.prevent="aTag" href="https://google.com">Google</a> <br>
+
+        <input @keyup.m="submit" />
+
+        <h2 @click="h2Tag">
+
+            <a @click.stop="doThis">Stop</a>
+        </h2>
+        
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                test(name, extra, $event) {
+                    console.log(name, extra, $event)
+                },
+                aTag() {
+                   console.log('check')     
+                },
+                doThis() {
+                    console.log('stop')
+                },
+                h2Tag() {
+                    console.log('h2tag')
+                },
+                submit() {
+                    console.log('keyUp')
+                },
+                clear() {
+                    console.log('clear');
+                }
+            },
+        })
+        app.mount('#event-handling');
+    </script>
+</body>
+
+</html>
