@@ -49,27 +49,10 @@
    2. State management
    3. Server side rendering
 
-
-
-
-### Laravel Vue js Ecommerce Course: https://codewith.sumon-sarker.com/
-
-
-### Laravel Vue js Blog Series: https://www.youtube.com/playlist?list...
-
-
-### Laravel Custom Roles, Middleware, Permission, Route Security series :https://www.youtube.com/watch?v=LYwQU... 
-
-
-### Laravel Vue js Realtime Chat Application Series:https://www.youtube.com/playlist?list... 
-
-
-### Laravel Multiple Authentication Series: https://www.youtube.com/watch?v=WUfqt...
 <br/>
 
-
 #### GitHub Profile: https://github.com/csesumonpro
-#### Vuejs A to Z Repo Link: https://github.com/csesumonpro/Vue3-A...
-#### Join US: https://www.facebook.com/groups/fulls...
+#### Vuejs A to Z Repo Link: https://github.com/csesumonpro/Vue3-A-to-Z
+#### Join US: https://www.facebook.com/groups/fullstackwebdevelopment
 #### Like US: https://www.facebook.com/csesumonpro
 #### WebSite: https://codewith.sumon-sarker.com
